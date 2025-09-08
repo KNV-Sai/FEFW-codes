@@ -1,0 +1,44 @@
+<<<<<<< HEAD
+.gallery{
+    position: relative;
+    width:200px;
+}
+.image img{
+    width : 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0; left:0;
+    width: 100%; height:100%;
+    background:rgba(4, 0, 236, 0.5);color:#bd0303;
+    opacity:0;
+    display:flex;align-items:center;justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.image:hover .overlay{
+    opacity: 10;
+=======
+.gallery{
+    position: relative;
+    width:200px;
+}
+.image img{
+    width : 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0; left:0;
+    width: 100%; height:100%;
+    background:rgba(4, 0, 236, 0.5);color:#bd0303;
+    opacity:0;
+    display:flex;align-items:center;justify-content: center;
+    transition: opacity 0.3s;
+}
+
+.image:hover .overlay{
+    opacity: 10;
+>>>>>>> 89882714a1b87dedd34fb4d9a814d3b9ff6ba990
+}

@@ -1,0 +1,108 @@
+<<<<<<< HEAD
+<html>
+    <head>
+        <title>Simple Calculator</title>
+    </head>
+    <body>
+        <h2>Simple Calculator</h2>
+        Result: <h3 id="result"></h3>
+
+        <input type="number" id="num1" placeholder="Enter first number"><br><br>
+        <input type="number" id="num2" placeholder="Enter second number"><br><br>
+
+        <button id="addBtn" onclick="calculate('+')">+</button>&nbsp;&nbsp;
+        <button id="subBtn" onclick="calculate('-')">-</button>&nbsp;&nbsp;
+        <button id="mulBtn" onclick="calculate('*')">X</button>&nbsp;&nbsp;
+        <button id="divBtn" onclick="calculate('/')">/</button>&nbsp;&nbsp;
+
+        <script>
+            function calculate(operation) {
+                let n1 = parseFloat(document.getElementById("num1").value);
+                let n2 = parseFloat(document.getElementById("num2").value);
+                let result;
+
+                if (isNaN(n1) || isNaN(n2)) {
+                    document.getElementById("result").innerHTML = "Please enter both numbers";
+                    return;
+                }
+
+                switch (operation) {
+                    case '+':
+                        result = n1 + n2;
+                        break;
+                    case '-':
+                        result = n1 - n2;
+                        break;
+                    case '*':
+                        result = n1 * n2;
+                        break;
+                    case '/':
+                        if (n2 === 0) {
+                            result = "Cannot divide by zero";
+                        } else {
+                            result = n1 / n2;
+                        }
+                        break;
+                    default:
+                        result = "Invalid operation";
+                }
+
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
+    </body>
+=======
+<html>
+    <head>
+        <title>Simple Calculator</title>
+    </head>
+    <body>
+        <h2>Simple Calculator</h2>
+        Result: <h3 id="result"></h3>
+
+        <input type="number" id="num1" placeholder="Enter first number"><br><br>
+        <input type="number" id="num2" placeholder="Enter second number"><br><br>
+
+        <button id="addBtn" onclick="calculate('+')">+</button>&nbsp;&nbsp;
+        <button id="subBtn" onclick="calculate('-')">-</button>&nbsp;&nbsp;
+        <button id="mulBtn" onclick="calculate('*')">X</button>&nbsp;&nbsp;
+        <button id="divBtn" onclick="calculate('/')">/</button>&nbsp;&nbsp;
+
+        <script>
+            function calculate(operation) {
+                let n1 = parseFloat(document.getElementById("num1").value);
+                let n2 = parseFloat(document.getElementById("num2").value);
+                let result;
+
+                if (isNaN(n1) || isNaN(n2)) {
+                    document.getElementById("result").innerHTML = "Please enter both numbers";
+                    return;
+                }
+
+                switch (operation) {
+                    case '+':
+                        result = n1 + n2;
+                        break;
+                    case '-':
+                        result = n1 - n2;
+                        break;
+                    case '*':
+                        result = n1 * n2;
+                        break;
+                    case '/':
+                        if (n2 === 0) {
+                            result = "Cannot divide by zero";
+                        } else {
+                            result = n1 / n2;
+                        }
+                        break;
+                    default:
+                        result = "Invalid operation";
+                }
+
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
+    </body>
+>>>>>>> 89882714a1b87dedd34fb4d9a814d3b9ff6ba990
+</html> 

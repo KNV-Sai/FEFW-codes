@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+#itemlist{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to top, #f0f0f0, #eb2a2a);
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+li:hover{
+    background-color: #dd2424;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+#container{
+    margin-top:30px;
+    margin-left: 20px;
+    padding: 30px;
+    border-bottom: 5px solid #000000;
+    border-style: dotted;
+=======
+#itemlist{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to top, #f0f0f0, #eb2a2a);
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+li:hover{
+    background-color: #dd2424;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+#container{
+    margin-top:30px;
+    margin-left: 20px;
+    padding: 30px;
+    border-bottom: 5px solid #000000;
+    border-style: dotted;
+>>>>>>> 89882714a1b87dedd34fb4d9a814d3b9ff6ba990
+}

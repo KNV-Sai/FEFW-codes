@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+.dropdown li{
+    position: relative;
+    list-style:none;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+    background: #eee
+}
+
+.dropdown li:hover .submenu{
+    display: block;
+}
+
+.mainmenu{
+    padding: 20px;
+=======
+.dropdown li{
+    position: relative;
+    list-style:none;
+}
+
+.submenu{
+    display:none;
+    position:absolute;
+    background: #eee
+}
+
+.dropdown li:hover .submenu{
+    display: block;
+}
+
+.mainmenu{
+    padding: 20px;
+>>>>>>> 89882714a1b87dedd34fb4d9a814d3b9ff6ba990
+}
