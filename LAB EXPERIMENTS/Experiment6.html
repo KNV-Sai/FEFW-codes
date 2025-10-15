@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7fafa; padding: 30px; }
+        .container { max-width: 400px; margin: auto; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0px 0px 8px rgba(0,0,0,.04);}
+        input, button { padding: 9px; margin: 10px 0; width: 100%; }
+        button { background: #3399ff; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+        .weather { margin: 18px 0; }
+        .error { color: #d9534f; margin: 8px 0; }
+        .label { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Weather App</h2>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="fetchBtn">Get Weather</button>
+        <div class="weather" id="weather"></div>
+        <div class="error" id="error"></div>
+    </div>
+    <script>
+        // Use your own OpenWeatherMap API key for full functionality.
+        const API_KEY = 'demo'; // Replace 'demo' with your real API key
+        const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+        const fetchBtn = document.getElementById('fetchBtn');
+        const cityInput = document.getElementById('cityInput');
+        const weatherDiv = document.getElementById('weather');
+        const errorDiv = document.getElementById('error');
+
+        // On page load: fetch weather for last city
+        window.addEventListener('DOMContentLoaded', () => {
+            const lastCity = localStorage.getItem('lastCity');
+            if (lastCity) {
+                cityInput.value = lastCity;
+                getWeather(lastCity);
+            }
+        });
+
+        fetchBtn.addEventListener('click', () => {
+            const city = cityInput.value.trim();
+            if (!city) {
+                showError('Please enter a city name.');
+                return;
+            }
+            getWeather(city);
+        });
+
+        async function getWeather(city) {
+            showError('');
+            weatherDiv.innerHTML = '';
+            try {
+                const url = `${API_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric`;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('City not found or API limit reached.');
+                const data = await response.json();
+                displayWeather(data);
+                localStorage.setItem('lastCity', city);
+            } catch (err) {
+                showError(err.message);
+            }
+        }
+
+        function displayWeather(data) {
+            weatherDiv.innerHTML = `
+                <div class="label">City:</div> ${data.name}
+                <br>
+                <div class="label">Temperature:</div> ${data.main.temp}°C
+                <br>
+                <div class="label">Condition:</div> ${data.weather[0].description}
+            `;
+        }
+
+        function showError(msg) {
+            errorDiv.textContent = msg;
+        }
+    </script>
+</body>
+</html>
